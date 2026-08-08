@@ -1,17 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+html{
+  scroll-behavior:smooth;
+  overflow-x:hidden;
 }
 
-body {
-  background: #0b0f19;
-  color: white;
-  font-family: Inter, Arial, sans-serif;
+body{
+  background:#09090B;
+  color:#FAFAFA;
+  font-family:'Inter',sans-serif;
+  overflow-x:hidden;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family:'Space Grotesk',sans-serif;
+}
+
+::selection{
+  background:#2563EB;
+  color:white;
+}
+
+@media (min-width: 1280px) and (max-height: 800px){
+  .hero-viewport{
+    align-items:flex-start;
+    padding-top:88px;
+    padding-bottom:0;
+  }
 }
