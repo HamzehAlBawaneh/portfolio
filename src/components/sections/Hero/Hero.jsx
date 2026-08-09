@@ -1,31 +1,24 @@
 import Container from "../../common/Container";
-
 import HeroBackground from "./HeroBackground";
 import HeroContent from "./HeroContent";
 import HeroImage from "./HeroImage";
 
 function Hero() {
   return (
-    <section
-      id="home"
-      className="relative min-h-screen overflow-hidden bg-[#05070c] pt-[98px]"
-    >
+    <section id="home" className="relative min-h-svh overflow-hidden pt-27">
       <HeroBackground />
 
-      <Container
-        maxWidth="max-w-[1396px]"
-        className="relative z-10 xl:px-2.5"
-        style={{ maxWidth: "1396px", marginInline: "auto", paddingInline: "10px" }}
-      >
-        <div className="hero-viewport flex min-h-[calc(100vh-98px)] items-start pt-12 py-16 xl:py-0">
-          <div className="grid w-full items-start gap-14 xl:grid-cols-[minmax(520px,620px)_minmax(460px,544px)] xl:gap-[clamp(3rem,7vw,6rem)]">
-            <HeroContent /> 
-            <HeroImage />
-          </div>
+      <Container className="relative z-10">
+        <div className="grid min-h-[calc(100svh-6.75rem)] items-start gap-12 py-12 xl:grid-cols-[minmax(0,620px)_minmax(460px,1fr)] xl:gap-[clamp(3rem,7vw,6rem)] xl:py-0">
+          <HeroContent />
+          <HeroImage />
         </div>
       </Container>
 
-      <div className="pointer-events-none absolute bottom-7 left-1/2 z-10 hidden -translate-x-1/2 flex-col items-center xl:flex">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-7 z-10 hidden flex-col items-center xl:flex"
+      >
         <span className="text-[10px] font-medium uppercase tracking-[0.27em] text-zinc-500">
           Scroll
         </span>

@@ -1,21 +1,7 @@
-function Container({
-  children,
-  className = "",
-  maxWidth = "max-w-[1320px]",
-  style,
-}) {
+function Container({ children, className = "" }) {
   return (
     <div
-      className={`
-        w-full
-        ${maxWidth}
-        mx-auto
-        px-8
-        lg:px-10
-        xl:px-0
-        ${className}
-      `}
-      style={style}
+      className={`mx-auto w-full max-w-[1396px] px-6 sm:px-8 lg:px-10 xl:px-2.5 ${className}`}
     >
       {children}
     </div>

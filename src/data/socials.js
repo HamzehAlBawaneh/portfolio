@@ -5,7 +5,7 @@ const socials = [
   },
   {
     name: "LinkedIn",
-    url: "www.linkedin.com/in/hamzeh-al-bawaneh-9b6023366",
+    url: "https://www.linkedin.com/in/hamzeh-al-bawaneh-9b6023366",
   },
   {
     name: "Email",
