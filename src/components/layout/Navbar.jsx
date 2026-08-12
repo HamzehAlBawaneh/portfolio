@@ -8,9 +8,12 @@ function Navbar() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-black/10 backdrop-blur-md">
+    <header className="sticky top-0 z-50  bg-black/10 backdrop-blur-md">
       <div className="mx-auto w-full max-w-[1450px] px-6 sm:px-8 lg:px-10 xl:px-12">
-        <nav className="flex h-[var(--header-height)] items-center justify-between xl:justify-start xl:px-6" aria-label="Primary navigation">
+        <nav
+          className="flex h-[var(--header-height)] items-center justify-between xl:justify-start xl:px-6"
+          aria-label="Primary navigation"
+        >
           <a
             href="#home"
             aria-label="Home"
@@ -46,26 +49,32 @@ function Navbar() {
             type="button"
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
-            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-label={
+              isMenuOpen ? "Close navigation menu" : "Open navigation menu"
+            }
             onClick={() => setIsMenuOpen((isOpen) => !isOpen)}
             className="ml-auto flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 text-white transition-colors duration-300 hover:border-blue-400 hover:bg-white/5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400 xl:hidden"
           >
-            {isMenuOpen ? <HiXMark size={24} aria-hidden="true" /> : <HiBars3 size={24} aria-hidden="true" />}
+            {isMenuOpen ? (
+              <HiXMark size={24} aria-hidden="true" />
+            ) : (
+              <HiBars3 size={24} aria-hidden="true" />
+            )}
           </button>
         </nav>
 
         {isMenuOpen && (
           <div
             id="mobile-navigation"
-            className="border-t border-white/10 py-4 sm:py-5 xl:hidden"
+            className="absolute left-0 right-0 top-full z-50 border-t border-white/10 bg-[#06142f]/95 px-4 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.35)] backdrop-blur-md xl:hidden"
           >
-            <ul className="grid gap-1">
+            <ul className="flex flex-col gap-1">
               {navigation.map(({ name, href }) => (
                 <li key={name}>
                   <a
                     href={href}
                     onClick={closeMenu}
-                    className="block rounded-xl px-4 py-3 text-sm text-[#c5c7d3] transition-colors duration-300 hover:bg-white/5 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
+                    className="block rounded-lg px-4 py-2.5 text-sm font-medium text-[#c5c7d3] transition-colors duration-200 hover:bg-white/5 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
                   >
                     {name}
                   </a>

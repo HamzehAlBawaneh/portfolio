@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root{
-  --header-height: 6.75rem;
+  --header-height: 5rem;
 }
 
 * {
