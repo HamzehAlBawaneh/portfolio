@@ -12,6 +12,7 @@
 html{
   scroll-behavior:smooth;
   overflow-x:hidden;
+  scroll-padding-top: var(--header-height);
 }
 
 body{

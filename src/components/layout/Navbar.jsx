@@ -8,7 +8,7 @@ function Navbar() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-50  bg-black/10 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 bg-black/10 backdrop-blur-md">
       <div className="mx-auto w-full max-w-[1450px] px-6 sm:px-8 lg:px-10 xl:px-12">
         <nav
           className="flex h-[var(--header-height)] items-center justify-between xl:justify-start xl:px-6"
