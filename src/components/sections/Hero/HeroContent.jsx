@@ -11,7 +11,7 @@ const SOCIAL_ICONS = {
 
 function HeroContent() {
   return (
-    <div className="max-w-[620px] space-y-8 pt-12">
+    <div className="max-w-[620px] space-y-8 xl:space-y-5">
       <h1 className="text-[clamp(4.2rem,7vw,6.15rem)] font-bold leading-[0.93] tracking-[-0.07em] text-white">
         Building
         <br />
@@ -26,7 +26,7 @@ function HeroContent() {
         Artificial Intelligence Engineer &amp; Full-Stack Web Developer focused on creating intelligent products and modern web experiences.
       </p>
 
-      <div className="flex flex-wrap gap-5 pt-2">
+      <div className="flex flex-wrap gap-5 pt-2 xl:pt-0">
         <Button
           href="#projects"
           className="h-[64px] min-w-[220px] rounded-2xl px-9 text-lg shadow-[0_12px_32px_rgba(30,95,255,0.26)]"
@@ -46,8 +46,8 @@ function HeroContent() {
         </Button>
       </div>
 
-      <div className="pt-5">
-        <p className="mb-7 text-sm font-semibold uppercase tracking-[0.22em] text-zinc-300">
+      <div className="pt-8 xl:pt-6">
+        <p className="mb-7 text-sm font-semibold uppercase tracking-[0.22em] text-zinc-300 xl:mb-5">
           Connect with me
         </p>
 

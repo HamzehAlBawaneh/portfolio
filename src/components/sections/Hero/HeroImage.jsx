@@ -2,10 +2,10 @@ import portrait from "../../../assets/images/hero-portrait.png";
 
 function HeroImage() {
   return (
-    <div className="relative mx-auto w-full max-w-[544px] pt-12 xl:pt-0">
+    <div className="relative mx-auto w-full max-w-[544px] xl:mx-0 xl:justify-self-end">
       <div className="pointer-events-none absolute inset-0 m-auto h-[540px] w-[540px] rounded-full bg-blue-600/25 blur-[120px]" />
 
-      <div className="relative z-10 mx-auto aspect-[0.814] w-[88%] overflow-hidden rounded-[32px] border border-white/20 bg-[#07142f] shadow-[0_24px_80px_rgba(0,43,154,0.24)] xl:h-[588px]">
+      <div className="relative z-10 mx-auto aspect-[0.814] w-[88%] overflow-hidden rounded-[32px] border border-white/20 bg-[#07142f] shadow-[0_24px_80px_rgba(0,43,154,0.24)] xl:ml-auto xl:h-[540px]">
         <img
           src={portrait}
           alt="Portrait of Hamzeh Al-Bawaneh"
