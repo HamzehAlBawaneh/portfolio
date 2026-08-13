@@ -1,4 +1,4 @@
-import portrait from "../../../assets/images/hero-portrait.png";
+import portrait from "../../../assets/images/hero-portrait.webp";
 
 function HeroImage() {
   return (
