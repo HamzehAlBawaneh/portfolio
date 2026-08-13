@@ -1,5 +1,5 @@
 const BASE_CLASSES =
-  "inline-flex items-center justify-center rounded-xl font-medium transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400";
+  "relative inline-flex items-center justify-center overflow-hidden rounded-2xl font-medium text-white transition-all duration-300 backdrop-blur-xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400";
 
 const SIZE_CLASSES = {
   sm: "h-11 px-6 text-sm",
@@ -8,8 +8,11 @@ const SIZE_CLASSES = {
 };
 
 const VARIANT_CLASSES = {
-  primary: "bg-blue-600 text-white shadow-lg shadow-blue-600/20 hover:bg-blue-500",
-  secondary: "border border-zinc-700 text-white hover:border-blue-500 hover:bg-zinc-900",
+  primary:
+    "border border-blue-300/45 bg-blue-500/[0.08] shadow-[0_10px_30px_rgba(37,99,235,0.12),inset_0_1px_0_rgba(255,255,255,0.16)] hover:-translate-y-0.5 hover:border-blue-200/70 hover:bg-blue-500/[0.12] hover:shadow-[0_14px_36px_rgba(37,99,235,0.22),inset_0_1px_0_rgba(255,255,255,0.22)]",
+
+  secondary:
+    "border border-white/25 bg-white/[0.045] shadow-[0_10px_30px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.12)] hover:-translate-y-0.5 hover:border-white/45 hover:bg-white/[0.07] hover:shadow-[0_14px_36px_rgba(0,0,0,0.24),inset_0_1px_0_rgba(255,255,255,0.18)]",
 };
 
 function Button({
@@ -27,14 +30,26 @@ function Button({
   if (href) {
     return (
       <a href={href} className={classes} {...props}>
-        {children}
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 rounded-[inherit] bg-[linear-gradient(135deg,rgba(255,255,255,0.10),transparent_32%,transparent_68%,rgba(255,255,255,0.035))]"
+        />
+        <span className="relative z-10 flex items-center justify-center">
+          {children}
+        </span>
       </a>
     );
   }
 
   return (
     <button type={type} onClick={onClick} className={classes} {...props}>
-      {children}
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 rounded-[inherit] bg-[linear-gradient(135deg,rgba(255,255,255,0.10),transparent_32%,transparent_68%,rgba(255,255,255,0.035))]"
+      />
+      <span className="relative z-10 flex items-center justify-center">
+        {children}
+      </span>
     </button>
   );
 }
