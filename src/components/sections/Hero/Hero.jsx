@@ -15,6 +15,7 @@ function Hero() {
         </div>
       </Container>
 
+      {/* Scroll indicator / glow origin */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 bottom-7 z-10 hidden flex-col items-center transition-opacity duration-150 xl:flex"
@@ -25,8 +26,24 @@ function Hero() {
         <span className="text-[10px] font-medium uppercase tracking-[0.27em] text-zinc-500">
           Scroll
         </span>
-        <span className="mt-3 h-8 w-px bg-gradient-to-b from-blue-400 to-blue-600" />
-        <span className="h-1 w-1 rounded-full bg-blue-500" />
+
+        {/* Longer glowing scroll line */}
+        <span
+          className="mt-3 h-12 w-px bg-gradient-to-b from-blue-400 via-blue-500 to-blue-600"
+          style={{
+            boxShadow:
+              "0 0 8px rgba(59,130,246,0.75), 0 0 20px rgba(37,99,235,0.42)",
+          }}
+        />
+
+        {/* Glowing origin point */}
+        <span
+          className="h-1.5 w-1.5 rounded-full bg-blue-400"
+          style={{
+            boxShadow:
+              "0 0 8px rgba(96,165,250,0.95), 0 0 20px rgba(37,99,235,0.55), 0 0 36px rgba(37,99,235,0.28)",
+          }}
+        />
       </div>
     </section>
   );

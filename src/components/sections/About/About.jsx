@@ -7,56 +7,121 @@ function About() {
   return (
     <section
       id="about"
-      className="relative overflow-visible pb-10 pt-12 sm:pb-14 sm:pt-16 xl:pb-14 xl:pt-20"
+      className="relative overflow-hidden pb-10 pt-12 sm:pb-14 sm:pt-16 xl:pb-14 xl:pt-20"
     >
-      {/* Hero → About visual transition */}
+      {/* ============================================================
+          Hero → About transition + traveling scroll light
+          ============================================================ */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 -top-24 z-[2] h-24 overflow-visible"
+        className="pointer-events-none absolute inset-0 z-[1]"
+        style={{
+          opacity: "var(--section-blend, 0)",
+        }}
       >
-        {/* Wide atmospheric blue/violet glow */}
-        <div
-          className="absolute inset-x-[-10%] top-1/2 h-24 -translate-y-1/2 rounded-full blur-[65px]"
-          style={{
-            opacity: "calc(var(--section-blend, 0) * 0.9)",
-            background:
-              "linear-gradient(90deg, transparent 0%, rgba(20,82,235,0.06) 18%, rgba(37,99,235,0.22) 42%, rgba(99,78,220,0.18) 58%, rgba(99,78,220,0.05) 82%, transparent 100%)",
-          }}
-        />
+        {/* Scroll point transition */}
+        <div className="absolute left-1/2 top-0 z-[3] h-40 w-10 -translate-x-1/2">
+          {/* Vertical light trail */}
+          <div
+            className="absolute left-1/2 top-0 w-px -translate-x-1/2"
+            style={{
+              height: "calc(18px + var(--section-blend, 0) * 105px)",
+              background:
+                "linear-gradient(to bottom, rgba(96,165,250,0.05), rgba(59,130,246,0.8), rgba(37,99,235,0.1))",
+              boxShadow:
+                "0 0 10px rgba(59,130,246,0.45), 0 0 24px rgba(37,99,235,0.18)",
+            }}
+          />
 
-        {/* Thin luminous horizon */}
-        <div
-          className="absolute inset-x-[-2%] top-1/2 h-px -translate-y-1/2"
-          style={{
-            opacity: "calc(var(--section-blend, 0) * 0.65)",
-            background:
-              "linear-gradient(90deg, transparent 0%, rgba(37,99,235,0.08) 25%, rgba(78,130,255,0.48) 50%, rgba(139,92,246,0.12) 75%, transparent 100%)",
-            boxShadow:
-              "0 0 14px rgba(37,99,235,0.28), 0 0 32px rgba(37,99,235,0.12)",
-          }}
-        />
+          {/* Traveling glowing point */}
+          <div
+            className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-blue-300"
+            style={{
+              transform:
+                "translate(-50%, calc(var(--section-blend, 0) * 105px))",
+              boxShadow:
+                "0 0 8px rgba(147,197,253,1), 0 0 18px rgba(59,130,246,0.9), 0 0 42px rgba(37,99,235,0.5)",
+            }}
+          />
 
-        {/* Subtle central bloom */}
-        <div
-          className="absolute left-1/2 top-1/2 h-20 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full blur-[42px]"
-          style={{
-            opacity: "calc(var(--section-blend, 0) * 0.55)",
-            background:
-              "radial-gradient(circle, rgba(59,130,246,0.20) 0%, rgba(59,130,246,0.06) 42%, transparent 72%)",
-          }}
-        />
+          {/* Soft trailing bloom */}
+          <div
+            className="absolute left-1/2 top-0 h-8 w-8 -translate-x-1/2 rounded-full blur-[14px]"
+            style={{
+              transform:
+                "translate(-50%, calc(var(--section-blend, 0) * 105px))",
+              background:
+                "radial-gradient(circle, rgba(96,165,250,0.55) 0%, rgba(37,99,235,0.2) 38%, transparent 75%)",
+            }}
+          />
+        </div>
+
+        {/* Curved light connected to the traveling point */}
+        <div className="absolute inset-0">
+          <svg
+            className="h-full w-full"
+            viewBox="0 0 1200 1050"
+            preserveAspectRatio="none"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <filter
+                id="aboutGlow"
+                x="-50%"
+                y="-50%"
+                width="200%"
+                height="200%"
+              >
+                <feGaussianBlur stdDeviation="22" />
+              </filter>
+
+              <linearGradient
+                id="aboutPathGradient"
+                x1="600"
+                y1="105"
+                x2="1040"
+                y2="900"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop offset="0" stopColor="#60A5FA" stopOpacity="0.82" />
+                <stop offset="0.16" stopColor="#3B82F6" stopOpacity="0.68" />
+                <stop offset="0.38" stopColor="#2478FF" stopOpacity="0.52" />
+                <stop offset="0.62" stopColor="#2D7FFF" stopOpacity="0.36" />
+                <stop offset="0.82" stopColor="#536FFF" stopOpacity="0.20" />
+                <stop offset="1" stopColor="#765CFF" stopOpacity="0" />
+              </linearGradient>
+            </defs>
+
+            {/* Wide atmospheric glow */}
+            <path
+              d="
+    M600 105
+    C600 170 615 240 605 320
+    C595 410 565 495 515 580
+    C465 665 405 740 375 805
+    C350 860 370 900 435 925
+    C505 952 595 940 685 925
+    C775 910 835 890 920 900
+    C1000 910 1060 945 1120 915
+    C1160 895 1185 865 1200 835
+  "
+              stroke="url(#aboutPathGradient)"
+              strokeWidth="68"
+              strokeLinecap="round"
+              filter="url(#aboutGlow)"
+              opacity="0.82"
+            />
+
+            
+          </svg>
+        </div>
       </div>
 
       {/* About background */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0 bg-[#060914]"
-      />
-
-      {/* About ambient glow */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 z-0 h-[32rem] w-[48rem] -translate-x-1/2 rounded-full bg-blue-700/10 blur-[150px]"
+        className="pointer-events-none absolute inset-0 z-0 bg-[#05070c]"
       />
 
       <Container className="relative z-10">
