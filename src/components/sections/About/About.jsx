@@ -2,6 +2,7 @@ import Container from "../../common/Container";
 import AboutCapabilities from "./AboutCapabilities";
 import AboutIntro from "./AboutIntro";
 import AboutTechnicalVisual from "./AboutTechnicalVisual";
+import HeroBackground from "../Hero/HeroBackground";
 
 function About() {
   return (
@@ -9,6 +10,14 @@ function About() {
       id="about"
       className="relative overflow-hidden pb-10 pt-12 sm:pb-14 sm:pt-16 xl:pb-14 xl:pt-20"
     >
+      {/* Shared Home / About background */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0"
+      >
+        <HeroBackground />
+      </div>
+
       {/* ============================================================
           Hero → About transition + traveling scroll light
           ============================================================ */}
@@ -93,37 +102,30 @@ function About() {
               </linearGradient>
             </defs>
 
-            {/* Wide atmospheric glow */}
+            {/* Curved atmospheric glow */}
             <path
               d="
-    M600 105
-    C600 170 615 240 605 320
-    C595 410 565 495 515 580
-    C465 665 405 740 375 805
-    C350 860 370 900 435 925
-    C505 952 595 940 685 925
-    C775 910 835 890 920 900
-    C1000 910 1060 945 1120 915
-    C1160 895 1185 865 1200 835
-  "
+                M600 105
+                C600 170 615 240 605 320
+                C595 410 565 495 515 580
+                C465 665 405 740 375 805
+                C350 860 370 900 435 925
+                C505 952 595 940 685 925
+                C775 910 835 890 920 900
+                C1000 910 1060 945 1120 915
+                C1160 895 1185 865 1200 835
+              "
               stroke="url(#aboutPathGradient)"
               strokeWidth="68"
               strokeLinecap="round"
               filter="url(#aboutGlow)"
               opacity="0.82"
             />
-
-            
           </svg>
         </div>
       </div>
 
-      {/* About background */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-0 bg-[#05070c]"
-      />
-
+      {/* About content */}
       <Container className="relative z-10">
         <div className="mx-auto max-w-[1210px]">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-400">

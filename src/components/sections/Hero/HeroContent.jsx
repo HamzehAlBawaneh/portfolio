@@ -79,7 +79,7 @@ function HeroContent() {
                   />
 
                   <span className="relative z-10">
-                    <Icon aria-hidden="true" />
+                   <Icon aria-hidden="true" />
                   </span>
                 </>
               </a>
