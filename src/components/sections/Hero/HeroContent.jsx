@@ -2,6 +2,7 @@ import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiArrowRight, HiOutlineArrowDownTray } from "react-icons/hi2";
 import Button from "../../common/Button";
 import socials from "../../../data/socials";
+import resume from "../../../assets/documents/Hamzeh-Al-Bawaneh-Resume.pdf";
 
 const SOCIAL_ICONS = {
   GitHub: FaGithub,
@@ -39,6 +40,8 @@ function HeroContent() {
 
         <Button
           variant="secondary"
+          href={resume}
+          download="Hamzeh-Al-Bawaneh-Resume.pdf"
           className="h-[64px] min-w-[240px] rounded-2xl border-white/25 px-8 text-lg hover:border-white/45 hover:bg-white/5"
         >
           <span className="flex items-center gap-4">
@@ -65,23 +68,21 @@ function HeroContent() {
                 aria-label={name}
                 target={isEmail ? undefined : "_blank"}
                 rel={isEmail ? undefined : "noreferrer"}
-                className="relative flex h-[60px] w-[60px] items-center justify-center overflow-hidden rounded-xl border border-white/15 bg-white/[0.018] text-[22px] text-white backdrop-blur-2xl shadow-[0_8px_24px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.12),inset_0_-1px_0_rgba(255,255,255,0.035)] transition-all duration-300 hover:-translate-y-1 hover:border-blue-300/40 hover:bg-white/[0.035] hover:shadow-[0_12px_30px_rgba(37,99,235,0.14),inset_0_1px_0_rgba(255,255,255,0.16),inset_0_-1px_0_rgba(255,255,255,0.04)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
+                className="relative flex h-[60px] w-[60px] items-center justify-center overflow-hidden rounded-xl border border-white/15 bg-white/[0.018] text-[22px] text-white shadow-[0_8px_24px_rgba(0,0,0,0.12),inset_0_1px_0_rgba(255,255,255,0.12),inset_0_-1px_0_rgba(255,255,255,0.035)] backdrop-blur-2xl transition-all duration-300 hover:-translate-y-1 hover:border-blue-300/40 hover:bg-white/[0.035] hover:shadow-[0_12px_30px_rgba(37,99,235,0.14),inset_0_1px_0_rgba(255,255,255,0.16),inset_0_-1px_0_rgba(255,255,255,0.04)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
               >
-                <>
-                  <span
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 rounded-[inherit] bg-[linear-gradient(135deg,rgba(255,255,255,0.08),transparent_30%,transparent_70%,rgba(120,160,255,0.035))]"
-                  />
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 rounded-[inherit] bg-[linear-gradient(135deg,rgba(255,255,255,0.08),transparent_30%,transparent_70%,rgba(120,160,255,0.035))]"
+                />
 
-                  <span
-                    aria-hidden="true"
-                    className="pointer-events-none absolute -inset-8 rounded-full bg-blue-500/[0.045] blur-2xl"
-                  />
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -inset-8 rounded-full bg-blue-500/[0.045] blur-2xl"
+                />
 
-                  <span className="relative z-10">
-                   <Icon aria-hidden="true" />
-                  </span>
-                </>
+                <span className="relative z-10">
+                  <Icon aria-hidden="true" />
+                </span>
               </a>
             );
           })}
