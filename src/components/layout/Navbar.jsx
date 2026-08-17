@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { HiBars3, HiOutlineArrowDownTray, HiXMark } from "react-icons/hi2";
 import navigation from "../../data/navigation";
+import resume from "../../assets/documents/Hamzeh-Al-Bawaneh-Resume.pdf";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,8 +43,9 @@ function Navbar() {
               ))}
             </ul>
 
-            <button
-              type="button"
+            <a
+              href={resume}
+              download="Hamzeh-Al-Bawaneh-Resume.pdf"
               className="relative ml-10 flex h-[58px] w-[140px] items-center justify-center gap-3 overflow-hidden rounded-2xl border border-blue-300/40 bg-blue-500/[0.06] text-[18px] font-semibold text-white shadow-[0_10px_30px_rgba(37,99,235,0.10),inset_0_1px_0_rgba(255,255,255,0.14)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-200/65 hover:bg-blue-500/[0.1] hover:shadow-[0_14px_36px_rgba(37,99,235,0.18),inset_0_1px_0_rgba(255,255,255,0.2)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
             >
               <span
@@ -55,7 +57,7 @@ function Navbar() {
                 Resume
                 <HiOutlineArrowDownTray size={20} aria-hidden="true" />
               </span>
-            </button>
+            </a>
           </div>
 
           <button
