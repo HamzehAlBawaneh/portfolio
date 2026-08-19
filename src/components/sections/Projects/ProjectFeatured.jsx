@@ -11,6 +11,16 @@ function ProjectFeatured({
 }) {
   return (
     <article className="group relative overflow-hidden rounded-[28px] border border-white/15 bg-white/[0.025] shadow-[0_28px_90px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.10)] backdrop-blur-2xl">
+      {/* Cursor-following glass reflection */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-[1] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        style={{
+          background:
+            "radial-gradient(circle 220px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(96,165,250,0.08), transparent 70%)",
+        }}
+      />
+
       {/* Glass reflection */}
       <div
         aria-hidden="true"

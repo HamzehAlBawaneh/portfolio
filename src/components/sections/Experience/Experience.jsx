@@ -48,10 +48,20 @@ function Experience() {
 
                   <div className="group relative overflow-hidden rounded-[24px] border border-white/12 bg-white/[0.025] shadow-[0_20px_60px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-300/25 hover:bg-white/[0.035] hover:shadow-[0_24px_68px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.10)]"
                   >
+                    {/* Cursor-following glass reflection */}
+                    <div
+                      aria-hidden="true"
+                      className="pointer-events-none absolute inset-0 z-[1] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                      style={{
+                        background:
+                          "radial-gradient(circle 200px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(96,165,250,0.07), transparent 70%)",
+                      }}
+                    />
+
                     {/* Glass reflection */}
                     <div
                       aria-hidden="true"
-                      className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.055),transparent_30%,transparent_72%,rgba(96,165,250,0.018))]"
+                      className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(135deg,rgba(255,255,255,0.055),transparent_30%,transparent_72%,rgba(96,165,250,0.018))]"
                     />
 
                     {/* Subtle blue ambient light */}

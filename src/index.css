@@ -3,6 +3,9 @@
 
 :root{
   --header-height: 5rem;
+  --mouse-x: 50vw;
+  --mouse-y: 50vh;
+  --mouse-active: 1;
 }
 
 * {

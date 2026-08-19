@@ -1,12 +1,50 @@
-import { useState } from "react";
-import { HiBars3, HiOutlineArrowDownTray, HiXMark } from "react-icons/hi2";
+import { useEffect, useState } from "react";
+import {
+  HiBars3,
+  HiOutlineArrowDownTray,
+  HiXMark,
+} from "react-icons/hi2";
 import navigation from "../../data/navigation";
 import resume from "../../assets/documents/Hamzeh-Al-Bawaneh-Resume.pdf";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("#home");
 
   const closeMenu = () => setIsMenuOpen(false);
+
+  useEffect(() => {
+    const sectionElements = navigation
+      .map(({ href }) => document.querySelector(href))
+      .filter(Boolean);
+
+    if (!sectionElements.length) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSections = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => {
+            return a.boundingClientRect.top - b.boundingClientRect.top;
+          });
+
+        if (visibleSections.length > 0) {
+          setActiveSection(`#${visibleSections[0].target.id}`);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "-30% 0px -55% 0px",
+        threshold: 0,
+      },
+    );
+
+    sectionElements.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[0.08] bg-black/[0.18] shadow-[0_8px_30px_rgba(0,0,0,0.16)] backdrop-blur-xl">
@@ -21,28 +59,59 @@ function Navbar() {
           className="flex h-[var(--header-height)] items-center justify-between xl:justify-start xl:px-6"
           aria-label="Primary navigation"
         >
+          {/* Logo */}
           <a
             href="#home"
             aria-label="Home"
+            onClick={() => setActiveSection("#home")}
             className="relative z-10 text-[42px] font-bold leading-none tracking-[-0.08em] text-white transition-colors duration-300 hover:text-blue-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
           >
             HB<span className="text-blue-500">.</span>
           </a>
 
+          {/* Desktop navigation */}
           <div className="ml-auto hidden items-center xl:flex">
             <ul className="flex items-center gap-14">
-              {navigation.map(({ name, href }) => (
-                <li key={name}>
-                  <a
-                    href={href}
-                    className="text-base text-[#c5c7d3] transition-colors duration-300 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
-                  >
-                    {name}
-                  </a>
-                </li>
-              ))}
+              {navigation.map(({ name, href }) => {
+                const isActive = activeSection === href;
+
+                return (
+                  <li key={name}>
+                    <a
+                      href={href}
+                      onClick={() => setActiveSection(href)}
+                      className={`group relative flex h-full items-center py-3 text-base transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400 ${
+                        isActive
+                          ? "text-white"
+                          : "text-[#c5c7d3] hover:text-white"
+                      }`}
+                    >
+                      {name}
+
+                      {/* Active underline */}
+                      <span
+                        aria-hidden="true"
+                        className={`absolute bottom-0 left-1/2 h-[2px] -translate-x-1/2 rounded-full bg-blue-400 transition-all duration-200 ${
+                          isActive
+                            ? "w-7 opacity-100 shadow-[0_0_8px_rgba(96,165,250,0.9),0_0_18px_rgba(59,130,246,0.55)]"
+                            : "w-0 opacity-0"
+                        }`}
+                      />
+
+                      {/* Soft active glow */}
+                      <span
+                        aria-hidden="true"
+                        className={`pointer-events-none absolute -bottom-1 left-1/2 h-5 -translate-x-1/2 rounded-full bg-blue-500/20 blur-md transition-opacity duration-200 ${
+                          isActive ? "w-10 opacity-100" : "w-0 opacity-0"
+                        }`}
+                      />
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
 
+            {/* Resume */}
             <a
               href={resume}
               download="Hamzeh-Al-Bawaneh-Resume.pdf"
@@ -60,6 +129,7 @@ function Navbar() {
             </a>
           </div>
 
+          {/* Mobile menu button */}
           <button
             type="button"
             aria-expanded={isMenuOpen}
@@ -85,6 +155,7 @@ function Navbar() {
           </button>
         </nav>
 
+        {/* Mobile navigation */}
         {isMenuOpen && (
           <div
             id="mobile-navigation"
@@ -96,17 +167,35 @@ function Navbar() {
             />
 
             <ul className="relative z-10 flex flex-col gap-1">
-              {navigation.map(({ name, href }) => (
-                <li key={name}>
-                  <a
-                    href={href}
-                    onClick={closeMenu}
-                    className="block rounded-lg px-4 py-2.5 text-sm font-medium text-[#c5c7d3] transition-all duration-200 hover:bg-white/[0.055] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400"
-                  >
-                    {name}
-                  </a>
-                </li>
-              ))}
+              {navigation.map(({ name, href }) => {
+                const isActive = activeSection === href;
+
+                return (
+                  <li key={name}>
+                    <a
+                      href={href}
+                      onClick={() => {
+                        setActiveSection(href);
+                        closeMenu();
+                      }}
+                      className={`relative block rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-400 ${
+                        isActive
+                          ? "bg-blue-500/[0.08] text-blue-300"
+                          : "text-[#c5c7d3] hover:bg-white/[0.055] hover:text-white"
+                      }`}
+                    >
+                      {isActive && (
+                        <span
+                          aria-hidden="true"
+                          className="absolute bottom-0 left-4 top-0 w-[2px] rounded-full bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.8)]"
+                        />
+                      )}
+
+                      {name}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         )}

@@ -5,10 +5,12 @@ import About from "./components/sections/About/About";
 import Projects from "./components/sections/Projects/Projects";
 import Skills from "./components/sections/Skills/Skills";
 import Experience from "./components/sections/Experience/Experience";
+import MouseGlow from "./components/common/MouseGlow";
 
 function App() {
   return (
     <div className="relative">
+      <MouseGlow />
       <Navbar />
       <ScrollEffects />
 
