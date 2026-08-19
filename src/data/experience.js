@@ -39,7 +39,7 @@ const experience = [
     id: "jfa",
     title: "VAR Operator",
     organization: "Jordan Football Association",
-    period: "Part-time",
+    period: "Part-time · Current",
     logo: jfaLogo,
     category: "Technical Operations",
     description:
