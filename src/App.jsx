@@ -6,6 +6,7 @@ import Projects from "./components/sections/Projects/Projects";
 import Skills from "./components/sections/Skills/Skills";
 import Experience from "./components/sections/Experience/Experience";
 import MouseGlow from "./components/common/MouseGlow";
+import Contact from "./components/sections/Contact/Contact";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Projects />
         <Skills />
         <Experience />
+        <Contact />
       </main>
     </div>
   );
