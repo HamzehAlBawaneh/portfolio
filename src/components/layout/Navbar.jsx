@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  HiBars3,
-  HiOutlineArrowDownTray,
-  HiXMark,
-} from "react-icons/hi2";
+import { HiBars3, HiOutlineArrowDownTray, HiXMark } from "react-icons/hi2";
 import navigation from "../../data/navigation";
 import resume from "../../assets/documents/Hamzeh-Al-Bawaneh-Resume.pdf";
 
@@ -63,7 +59,6 @@ function Navbar() {
           <a
             href="#home"
             aria-label="Home"
-            onClick={() => setActiveSection("#home")}
             className="relative z-10 text-[42px] font-bold leading-none tracking-[-0.08em] text-white transition-colors duration-300 hover:text-blue-400 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
           >
             HB<span className="text-blue-500">.</span>
