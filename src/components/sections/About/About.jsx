@@ -19,7 +19,8 @@ function About() {
       </div>
 
       {/* ============================================================
-          Hero → About transition + traveling scroll light
+          Hero → About atmospheric transition
+          The traveling circle itself lives in Hero.jsx.
           ============================================================ */}
       <div
         aria-hidden="true"
@@ -28,44 +29,19 @@ function About() {
           opacity: "var(--section-blend, 0)",
         }}
       >
-        {/* Scroll point transition */}
-        <div className="absolute left-1/2 top-0 z-[3] h-40 w-10 -translate-x-1/2">
-          {/* Vertical light trail */}
-          <div
-            className="absolute left-1/2 top-0 w-px -translate-x-1/2"
-            style={{
-              height: "calc(18px + var(--section-blend, 0) * 105px)",
-              background:
-                "linear-gradient(to bottom, rgba(96,165,250,0.05), rgba(59,130,246,0.8), rgba(37,99,235,0.1))",
-              boxShadow:
-                "0 0 10px rgba(59,130,246,0.45), 0 0 24px rgba(37,99,235,0.18)",
-            }}
-          />
+        {/* Subtle straight light continuation */}
+        <div
+          className="absolute left-1/2 top-0 h-32 w-px -translate-x-1/2"
+          style={{
+            opacity: "var(--section-blend, 0.8)",
+            background:
+              "linear-gradient(to bottom, rgba(59,130,246,0.30), rgba(59,130,246,0.08), transparent)",
+            boxShadow:
+              "0 0 10px rgba(59,130,246,0.14), 0 0 24px rgba(37,99,235,0.08)",
+          }}
+        />
 
-          {/* Traveling glowing point */}
-          <div
-            className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-blue-300"
-            style={{
-              transform:
-                "translate(-50%, calc(var(--section-blend, 0) * 105px))",
-              boxShadow:
-                "0 0 8px rgba(147,197,253,1), 0 0 18px rgba(59,130,246,0.9), 0 0 42px rgba(37,99,235,0.5)",
-            }}
-          />
-
-          {/* Soft trailing bloom */}
-          <div
-            className="absolute left-1/2 top-0 h-8 w-8 -translate-x-1/2 rounded-full blur-[14px]"
-            style={{
-              transform:
-                "translate(-50%, calc(var(--section-blend, 0) * 105px))",
-              background:
-                "radial-gradient(circle, rgba(96,165,250,0.55) 0%, rgba(37,99,235,0.2) 38%, transparent 75%)",
-            }}
-          />
-        </div>
-
-        {/* Curved light connected to the traveling point */}
+        {/* Original atmospheric glow */}
         <div className="absolute inset-0">
           <svg
             className="h-full w-full"
@@ -102,7 +78,6 @@ function About() {
               </linearGradient>
             </defs>
 
-            {/* Curved atmospheric glow */}
             <path
               d="
                 M600 105

@@ -15,7 +15,7 @@ function Hero() {
         </div>
       </Container>
 
-      {/* Scroll indicator / glow origin */}
+      {/* Scroll indicator / traveling glow */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 bottom-7 z-10 hidden flex-col items-center transition-opacity duration-150 xl:flex"
@@ -27,7 +27,7 @@ function Hero() {
           Scroll
         </span>
 
-        {/* Longer glowing scroll line */}
+        {/* Glowing vertical origin line */}
         <span
           className="mt-3 h-12 w-px bg-gradient-to-b from-blue-400 via-blue-500 to-blue-600"
           style={{
@@ -36,10 +36,13 @@ function Hero() {
           }}
         />
 
-        {/* Glowing origin point */}
+        {/* The ONLY traveling circle */}
         <span
           className="h-1.5 w-1.5 rounded-full bg-blue-400"
           style={{
+            transform:
+              "translateY(calc(var(--section-blend, 0) * 170px))",
+            transition: "transform 80ms linear",
             boxShadow:
               "0 0 8px rgba(96,165,250,0.95), 0 0 20px rgba(37,99,235,0.55), 0 0 36px rgba(37,99,235,0.28)",
           }}
