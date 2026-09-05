@@ -78,9 +78,7 @@ function ProjectFeatured({
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">
                 Result
               </p>
-              <p className="mt-2 text-sm font-semibold text-white">
-                {result}
-              </p>
+              <p className="mt-2 text-sm font-semibold text-white">{result}</p>
             </div>
           )}
 

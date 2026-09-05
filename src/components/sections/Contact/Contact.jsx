@@ -45,17 +45,17 @@ function Contact() {
               </p>
 
               <h2 className="mt-4 text-[clamp(2.5rem,5vw,5rem)] font-bold leading-[1.02] tracking-[-0.055em] text-white">
-                Let&apos;s build something{" "}
+                Have something worth{" "}
                 <span className="bg-gradient-to-r from-[#0878ff] via-[#2768ff] to-[#8b68ff] bg-clip-text text-transparent">
-                  intelligent
+                  building
                 </span>
-                <span className="text-blue-500">.</span>
+                <span className="text-blue-500">?</span>
               </h2>
 
               <p className="mx-auto mt-6 max-w-[680px] text-base leading-7 text-zinc-400 sm:text-lg">
-                I&apos;m interested in AI engineering, machine learning,
-                computer vision, automation, robotics, and full-stack software
-                projects.
+                Whether it&apos;s a project, an idea, or a problem that needs
+                solving, I&apos;m always interested in building something useful
+                and figuring out how to make it better.
               </p>
 
               <div className="mt-9 flex flex-wrap justify-center gap-4">
@@ -69,7 +69,7 @@ function Contact() {
                   />
 
                   <span className="relative z-10 flex items-center gap-3">
-                    Get in Touch
+                    Let's Talk
                     <HiArrowUpRight size={18} aria-hidden="true" />
                   </span>
                 </a>
@@ -86,7 +86,9 @@ function Contact() {
                 {socials.map(({ name, url }) => {
                   const Icon = SOCIAL_ICONS[name];
                   const href =
-                    name === "Email" ? "https://mail.google.com/mail/?view=cm&fs=1&to=hamzehbawaneh6@gmail.com" : url;
+                    name === "Email"
+                      ? "https://mail.google.com/mail/?view=cm&fs=1&to=hamzehbawaneh6@gmail.com"
+                      : url;
 
                   return (
                     <a

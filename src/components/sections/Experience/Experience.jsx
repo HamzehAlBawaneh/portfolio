@@ -21,8 +21,8 @@ function Experience() {
         <div className="mx-auto max-w-[1210px]">
           <SectionTitle
             eyebrow="04 / Experience"
-            title="Building practical experience across AI, education, and real-time systems."
-            description="A combination of engineering, teaching, and technical operations that strengthens both my skills and perspective."
+            title="Different environments. Same mindset."
+            description="Some of my experience comes from building software, some from teaching, and some from working with systems where precision matters."
           />
 
           <div className="relative mt-12 xl:mt-14">
@@ -34,10 +34,7 @@ function Experience() {
 
             <div className="space-y-5 sm:space-y-6">
               {experience.map((item) => (
-                <article
-                  key={item.id}
-                  className="relative pl-14 sm:pl-[72px]"
-                >
+                <article key={item.id} className="relative pl-14 sm:pl-[72px]">
                   {/* Timeline node */}
                   <span
                     aria-hidden="true"
@@ -46,8 +43,7 @@ function Experience() {
                     <span className="h-1.5 w-1.5 rounded-full bg-blue-300" />
                   </span>
 
-                  <div className="group relative overflow-hidden rounded-[24px] border border-white/12 bg-white/[0.025] shadow-[0_20px_60px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-300/25 hover:bg-white/[0.035] hover:shadow-[0_24px_68px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.10)]"
-                  >
+                  <div className="group relative overflow-hidden rounded-[24px] border border-white/12 bg-white/[0.025] shadow-[0_20px_60px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-300/25 hover:bg-white/[0.035] hover:shadow-[0_24px_68px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.10)]">
                     {/* Cursor-following glass reflection */}
                     <div
                       aria-hidden="true"

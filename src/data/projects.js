@@ -11,7 +11,7 @@ const projects = [
     title: "AI Public Threat Detection",
     category: "Computer Vision / AI",
     description:
-      "Real-time computer vision system for weapon detection, face recognition, threat assessment, and incident monitoring.",
+      "I wanted to see how far a real-time camera system could go beyond simple object detection. This project combines weapon detection, face recognition, threat assessment, and incident monitoring into one pipeline.",
     technologies: ["YOLOv8", "OpenCV", "ONNX", "Flask"],
     result: "94.6% Precision · 96.5% mAP@50",
     image: threatBanner,
@@ -24,7 +24,7 @@ const projects = [
     title: "AI Floorplan Generator",
     category: "AI / Procedural Generation",
     description:
-      "AI-assisted floorplan generation combining land-shape classification, procedural generation, geometry processing, and full-stack integration.",
+      "I wanted to explore how much of a floorplan could be generated from constraints instead of drawn by hand. The system adapts layouts to land shape, building type, space requirements, and geometry.",
     technologies: [
       "ConvNeXt",
       "PyTorch",
@@ -42,7 +42,7 @@ const projects = [
     title: "AI + Embedded Robotics",
     category: "Robotics",
     description:
-      "Robotics work combining AI concepts with embedded systems and autonomous behavior.",
+      "This project started with a simple question: what changes when software has to leave the screen and interact with the real world? I worked with embedded hardware, sensors, motor control, and autonomous behavior to build a small campus patrol platform.",
     technologies: ["AI", "Embedded Systems", "Robotics"],
     image: roboticsBanner,
     href: "https://github.com/HamzehAlBawaneh/CampusGuard-Robot",
@@ -54,7 +54,7 @@ const projects = [
     title: "Used Car Price Prediction",
     category: "Machine Learning",
     description:
-      "End-to-end machine learning pipeline covering preprocessing, feature engineering, regression modeling, and model comparison.",
+      "A project built around taking messy vehicle data and turning it into something useful. The workflow covers cleaning, exploration, feature engineering, regression, and comparing model performance.",
     technologies: [
       "Python",
       "Pandas",
@@ -71,7 +71,7 @@ const projects = [
     title: "AI Workflow Automation with n8n",
     category: "AI Automation",
     description:
-      "AI-powered workflow automation combining trend detection, rule-based filtering, LLM classification, human approval, and audit logging.",
+      "I wanted to see how repetitive decision-making could be turned into a workflow instead of a manual process. The system combines trend detection, rule-based filtering, LLM classification, human approval, and audit logging.",
     technologies: ["n8n", "LLM", "REST APIs", "Telegram"],
     image: n8nBanner,
     href: "https://github.com/HamzehAlBawaneh/AI-Workflow-Automation-with-n8n",
@@ -83,7 +83,7 @@ const projects = [
     title: "ALSA3ATI",
     category: "Frontend / E-Commerce",
     description:
-      "Responsive front-end e-commerce experience with product browsing, filtering, search, and client-side cart persistence.",
+      "A frontend project focused on making a small e-commerce experience feel simple and usable. It includes product browsing, filtering, search, and persistent client-side cart data.",
     technologies: ["HTML", "CSS", "JavaScript", "LocalStorage"],
     image: saatiBanner,
     href: "https://github.com/HamzehAlBawaneh/ALSA3ATI",
@@ -91,4 +91,4 @@ const projects = [
   },
 ];
 
-export default projects;    
+export default projects;

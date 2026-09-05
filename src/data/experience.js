@@ -11,7 +11,7 @@ const experience = [
     logo: nonerdsLogo,
     category: "Education",
     description:
-      "Designed and delivered educational materials for Artificial Intelligence major coursework, including Data Structures, with upcoming teaching responsibilities in Data Science and Machine Learning.",
+      "I create and organize learning material for AI-major students, currently focusing on Data Structures and Algorithms and turning difficult concepts into material that is easier to understand and use.",
     skills: [
       "Data Structures",
       "Algorithms",
@@ -19,6 +19,7 @@ const experience = [
       "Technical Instruction",
     ],
   },
+
   {
     id: "metaserv",
     title: "AI Engineer Intern",
@@ -27,7 +28,7 @@ const experience = [
     logo: metaservLogo,
     category: "AI Engineering",
     description:
-      "Designed and developed AI-powered n8n workflows integrating AI models, REST APIs, and business-process automation for practical project requirements.",
+      "During my internship, I worked on turning business requirements into working automated workflows. I used n8n, AI models, and APIs to connect different pieces of a process and make repetitive work easier to run.",
     skills: [
       "n8n",
       "LLM Integration",
@@ -35,6 +36,7 @@ const experience = [
       "Workflow Automation",
     ],
   },
+
   {
     id: "jfa",
     title: "VAR Operator",
@@ -43,7 +45,7 @@ const experience = [
     logo: jfaLogo,
     category: "Technical Operations",
     description:
-      "Prepared and verified the VAR technical system before matches by connecting cameras, checking server operation, and validating system readiness. During matches, operated camera feeds and review functions under referee instructions, including offside-line checks.",
+      "A very different kind of technical work. Before matches, I help prepare and verify the VAR system, cameras, and server. During the match, I operate camera feeds and review tools under referee instructions, where precision and timing matter.",
     skills: [
       "VAR Systems",
       "Camera Systems",

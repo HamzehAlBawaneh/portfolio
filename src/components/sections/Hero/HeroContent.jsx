@@ -14,18 +14,19 @@ function HeroContent() {
   return (
     <div className="max-w-[620px] space-y-8 xl:space-y-5">
       <h1 className="text-[clamp(4.2rem,7vw,6.15rem)] font-bold leading-[0.93] tracking-[-0.07em] text-white">
-        Building
+        I build.
         <br />
         <span className="bg-gradient-to-r from-[#0878ff] via-[#2768ff] to-[#8b68ff] bg-clip-text text-transparent">
-          intelligent
+          I experiment.
         </span>
         <br />
-        software<span className="text-blue-500">.</span>
+        I improve<span className="text-blue-500">.</span>
       </h1>
 
       <p className="max-w-[560px] text-[22px] leading-[1.75] text-zinc-400">
-        Artificial Intelligence Engineer &amp; Full-Stack Web Developer focused
-        on creating intelligent products and modern web experiences.
+        I'm an AI student who learns by building things — from machine
+        learning models and computer vision systems to automation, robotics,
+        and software.
       </p>
 
       <div className="flex flex-wrap gap-5 pt-2 xl:pt-0">
@@ -53,7 +54,7 @@ function HeroContent() {
 
       <div className="pt-3 xl:pt-6">
         <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-zinc-300 xl:mb-5">
-          Connect with me
+          Find me online
         </p>
 
         <div className="flex gap-5">

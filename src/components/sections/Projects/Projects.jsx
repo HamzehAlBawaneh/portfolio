@@ -12,8 +12,7 @@ function Projects() {
 
   const secondaryProjects = projects.filter(
     (project) =>
-      project.id === "floorplan-generator" ||
-      project.id === "robotics",
+      project.id === "floorplan-generator" || project.id === "robotics",
   );
 
   const supportingProjects = projects.filter(
@@ -41,8 +40,8 @@ function Projects() {
         <div className="mx-auto max-w-[1210px]">
           <SectionTitle
             eyebrow="02 / Selected Work"
-            title="Engineering projects that turn ideas into intelligent software."
-            description="A collection of projects spanning Artificial Intelligence, Machine Learning, Computer Vision, Robotics, Automation, and Full-Stack Development."
+            title="Things I built to figure things out."
+            description="A collection of projects where I turned ideas, problems, and curiosity into working software."
           />
 
           {featuredProject && (

@@ -48,7 +48,7 @@ function ProjectCard({
       </div>
 
       <div className="relative z-[2] p-6">
-        <p className="text-xs font-semibold uppercase tracking-[0.17em] text-blue-400">
+        <p className="mt-6 text-xs font-semibold uppercase tracking-[0.17em] text-blue-400">
           {category}
         </p>
 
@@ -56,9 +56,7 @@ function ProjectCard({
           {title}
         </h3>
 
-        <p className="mt-3 text-sm leading-6 text-zinc-400">
-          {description}
-        </p>
+        <p className="mt-3 text-sm leading-6 text-zinc-400">{description}</p>
 
         <div className="mt-5 flex flex-wrap gap-2">
           {technologies.map((technology) => (

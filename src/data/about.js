@@ -1,22 +1,22 @@
 export const capabilities = [
   {
     title: "AI & Machine Learning",
-    description: "Building intelligent models and practical AI systems.",
+    description: "From datasets to models, I like figuring out what makes a system work.",
     icon: "ai",
   },
   {
     title: "Computer Vision",
-    description: "Detection, recognition, image processing, and visual intelligence.",
+    description: "Teaching software to understand images, cameras, and the world they capture.",
     icon: "vision",
   },
   {
     title: "Full-Stack Development",
-    description: "Modern interfaces and reliable end-to-end applications.",
+    description: "Turning ideas into interfaces and applications that people can actually use.",
     icon: "code",
   },
   {
     title: "Robotics",
-    description: "Combining software, AI, and hardware into intelligent systems.",
+    description: "Where code leaves the screen and has to deal with sensors, hardware, and the real world.",
     icon: "robotics",
   },
 ];

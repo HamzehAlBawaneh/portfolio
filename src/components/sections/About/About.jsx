@@ -108,11 +108,11 @@ function About() {
           </p>
 
           <h2 className="mt-4 max-w-[44rem] text-[clamp(2.5rem,4.6vw,4.7rem)] font-bold leading-[1.05] tracking-[-0.055em] text-white">
-            Building{" "}
+            More{" "}
             <span className="bg-gradient-to-r from-[#0878ff] via-[#2768ff] to-[#8b68ff] bg-clip-text text-transparent">
-              intelligent
-            </span>{" "}
-            systems with purpose
+              building
+            </span>
+            , less talking
             <span className="text-blue-500">.</span>
           </h2>
 
